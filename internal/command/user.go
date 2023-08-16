@@ -11,6 +11,7 @@ func SetToUserPath(env string) error {
 	if err != nil {
 		return err
 	}
+
 	defer key.Close()
 	paths := append(config.ReadPathEnv(), env)
 	join := strings.Join(paths, ",")
